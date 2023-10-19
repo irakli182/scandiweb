@@ -1,0 +1,88 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 3rem;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 100px;
+  border-bottom: 2px solid black;
+}
+
+.header_buttons {
+  display: flex;
+  gap: 50px;
+}
+
+.button {
+  width: 150px;
+  height: 60px;
+  font-size: 1.5rem;
+  border-style: hidden;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.2s;
+
+}
+
+#buttonAdd {
+  background-color: rgb(27, 204, 27);
+}
+
+#buttonDel {
+  background-color: #E0234E;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+}
+
+.product-card {
+    height: auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 260px;
+    width: fit-content;
+    height: 200px;
+    margin: 60px;
+    text-align: center;
+}
+
+.product-card p {
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.checkbox-div {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+.checkbox-div input {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 20px;
+  width: 20px;
+  height: 30px;
+}
+
+
+
+.product-details {
+  flex-grow: 1;
+  padding: 10px; 
+}
+

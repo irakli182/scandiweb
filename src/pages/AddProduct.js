@@ -28,6 +28,7 @@ function AddProduct() {
         }
         return true;
     };
+    
     const checkInputs = () => {
         const skuValue = sku;
         const nameValue = name;
@@ -54,7 +55,7 @@ function AddProduct() {
             data.weight = document.getElementById("weight").value;
         }
     
-        axios.post('http://localhost/backend/addProduct.php', data)
+        axios.post('https://scandiwebirakli.000webhostapp.com/addProduct.php', data)
             .then((response) => {
                 console.log('Response data:', response.data);
                 navigate('/');

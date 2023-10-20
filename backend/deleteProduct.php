@@ -2,10 +2,10 @@
 // deleteProducts.php
 
 // Establish a database connection (replace with your database credentials)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "scandiweb";
+$servername = "sql306.byethost18.com";
+$username = "b18_35271351";
+$password = "Mariamiiko12.";
+$dbname = "b18_35271351_scandiweb";
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,7 +16,8 @@ if ($conn->connect_error) {
 }
 
 // Check if the request is a POST request
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     // Get the item IDs to be deleted from the request
     $data = json_decode(file_get_contents("php://input"), true);
     $itemIdsToDelete = $data["itemIds"];
@@ -38,4 +39,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Invalid request method.";
 }
+exit()
 ?>

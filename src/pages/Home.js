@@ -9,17 +9,19 @@ function Home() {
   const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
-    // Make a GET request to your server's API endpoint
-    axios.get('http://localhost/backend/getProduct.php')
+    axios.get('https://scandiwebirakli.000webhostapp.com/getProduct.php')
       .then((response) => {
-        setData(response.data);
+        if (Array.isArray(response.data)) {
+          setData(response.data);
+        } else {
+          console.error('Response data is not an array:', response.data);
+        }
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-
   }, []);
-
+  
   const handleCheckboxChange = (item) => {
     // Toggle the selected state of the item
     if (selectedItems.includes(item)) {
@@ -36,7 +38,7 @@ function Home() {
     const itemIdsToDelete = selectedItems.map(item => item.id);
 
     // Send a request to the backend to delete the selected items
-    axios.post('http://localhost/backend/deleteProduct.php', { itemIds: itemIdsToDelete })
+    axios.post('https://scandiwebirakli.000webhostapp.com/deleteProduct.php', { itemIds: itemIdsToDelete })
       .then(response => {
         // Handle a successful deletion
         console.log("Items deleted successfully.");
@@ -102,7 +104,6 @@ function Home() {
                 ))}
             </div>
         </div>
-
     </div>
   );
 }

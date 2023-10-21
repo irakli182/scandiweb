@@ -9,18 +9,27 @@ function Home() {
   const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
-    axios.get('https://scandiwebirakli.000webhostapp.com/getProduct.php')
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setData(response.data);
+    const url = 'https://scandiwebirakli2.000webhostapp.com/getProduct.php'; // Replace with your API endpoint
+  
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Assuming the response is JSON data
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          setData(data);
         } else {
-          console.error('Response data is not an array:', response.data);
+          console.error('Response data is not an array:', data);
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error('Error:', error);
       });
   }, []);
+  
   
   const handleCheckboxChange = (item) => {
     // Toggle the selected state of the item
@@ -38,20 +47,37 @@ function Home() {
     const itemIdsToDelete = selectedItems.map(item => item.id);
 
     // Send a request to the backend to delete the selected items
-    axios.post('https://scandiwebirakli.000webhostapp.com/deleteProduct.php', { itemIds: itemIdsToDelete })
+    const url = 'https://scandiwebirakli2.000webhostapp.com/deleteProduct.php'; // Replace with your API endpoint
+    const data = { itemIds: itemIdsToDelete };
+    
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
       .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // If you expect a JSON response from the server
+      })
+      .then(() => {
         // Handle a successful deletion
         console.log("Items deleted successfully.");
-        
+    
         // Remove the deleted items from the data state
         setData(data.filter(item => !itemIdsToDelete.includes(item.id)));
-
+    
         // Clear the selected items
         setSelectedItems([]);
       })
       .catch(error => {
+        // Handle the error
         console.error('Error deleting items:', error);
       });
+    
 
     } else {
       alert("no item is selected")

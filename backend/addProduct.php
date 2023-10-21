@@ -1,13 +1,16 @@
 <?php
+
+header('Access-Control-Allow-Origin: *');
+
 $data = file_get_contents('php://input');
 $skuData = json_decode($data, true);
 
 if ($skuData !== null) {
 
-    $servername = "sql306.byethost18.com";
-    $username = "b18_35271351";
+    $servername = "localhost";
+    $username = "id21434775_irakli";
     $password = "Mariamiiko12.";
-    $dbname = "b18_35271351_scandiweb";
+    $dbname = "id21434775_scandiweb";
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

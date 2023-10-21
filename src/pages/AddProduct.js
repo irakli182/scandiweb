@@ -55,15 +55,29 @@ function AddProduct() {
             data.weight = document.getElementById("weight").value;
         }
     
-        axios.post('https://scandiwebirakli.000webhostapp.com/addProduct.php', data)
-            .then((response) => {
-                console.log('Response data:', response.data);
-                navigate('/');
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        const url = 'https://scandiwebirakli2.000webhostapp.com/addProduct.php'; // Replace with your API endpoint
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: data // The JSON data you want to send
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json(); // If you expect a JSON response from the server
+          })
+          .then(data => {
+            // Handle the response from the server
+            console.log(data);
+          })
+          .catch(error => {
+            // Handle any errors
+            console.error('Error:', error);
+          });
+    
 
     };
 

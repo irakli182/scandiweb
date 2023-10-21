@@ -1,11 +1,12 @@
 <?php
 // deleteProducts.php
+header('Access-Control-Allow-Origin: *');
 
 // Establish a database connection (replace with your database credentials)
-$servername = "sql306.byethost18.com";
-$username = "b18_35271351";
+$servername = "localhost";
+$username = "id21434775_irakli";
 $password = "Mariamiiko12.";
-$dbname = "b18_35271351_scandiweb";
+$dbname = "id21434775_scandiweb";
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);

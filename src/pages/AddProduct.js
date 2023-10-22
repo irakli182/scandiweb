@@ -10,13 +10,13 @@ import "../styles/AddProduct.css";
 
 function AddProduct() {
 
-
+    let navigate = useNavigate();
     const [sku, setSku] = useState('');
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [selectedType, setSelectedType] = useState('DVD');
     
-    const checkForm = () => {
+    const checkMandatoryFields = () => {
         if (selectedType === "DVD" && !document.getElementById("size").value) {
             return false;
         }
@@ -34,11 +34,10 @@ function AddProduct() {
         const nameValue = name;
         const priceValue = price;
     
-        if (!skuValue || !nameValue || !priceValue || !checkForm()) {
+        if (!skuValue || !nameValue || !priceValue || !checkMandatoryFields()) {
             alert("Please fill in all fields");
             return;
         }
-        
     
         const data = {
             sku: skuValue,
@@ -48,31 +47,30 @@ function AddProduct() {
     
         if (selectedType === "DVD") {
             data.size = document.getElementById("size").value;
-        } else if (selectedType === "Furniture") {
+        }
+        if (selectedType === "Furniture") {
             data.height = document.getElementById("height").value;
             data.width = document.getElementById("width").value;
             data.length = document.getElementById("length").value;
-        } else if (selectedType === "Book") {
+        }
+        if (selectedType === "Book") {
             data.weight = document.getElementById("weight").value;
         }
     
-        const url = 'https://irakli-php-api-66869e659c11.herokuapp.com/addProduct.php'; // Replace with your API endpoint
 
-        axios.post(url, data, {
+        axios.post('https://irakli-php-api-66869e659c11.herokuapp.com/addProduct.php', data, {
           headers: {
             'Content-Type': 'application/json'
           }
         })
           .then(response => {
-            // Handle the response from the server
             console.log(response.data);
+            navigate('/');
           })
           .catch(error => {
-            // Handle any errors
             console.error('Error:', error);
           });
         
-    
 
     };
 
@@ -86,7 +84,7 @@ function AddProduct() {
                     <p>Product Add</p>
                 </div>
                 <div className='header_buttons'>
-                    <Link to="/">
+                    <Link>
                         <button id='buttonAdd' className='button' onClick={checkInputs}>Save</button>
                     </Link>
                     <Link to="/">

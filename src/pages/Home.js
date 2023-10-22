@@ -9,7 +9,6 @@ function Home() {
   const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
-    // Make a GET request to your server's API endpoint
     axios.get('https://irakli-php-api-66869e659c11.herokuapp.com/getProduct.php')
       .then((response) => {
         setData(response.data);
@@ -21,7 +20,6 @@ function Home() {
   }, []);
 
   const handleCheckboxChange = (item) => {
-    // Toggle the selected state of the item
     if (selectedItems.includes(item)) {
       setSelectedItems(selectedItems.filter(selectedItem => selectedItem !== item));
     } else {
@@ -29,33 +27,25 @@ function Home() {
     }
   };
 
-  const handleMassDelete = () => {
-    if (selectedItems.length > 0) {
-      // Log the selected items
-      console.log("Selected items to delete:", selectedItems);
-    const itemIdsToDelete = selectedItems.map(item => item.id);
+const handleMassDelete = () => {
+  if (selectedItems.length === 0) {
+    alert("No items are selected");
+    console.log("No items are selected for deletion.");
+    return;
+  }
 
-    // Send a request to the backend to delete the selected items
-    axios.post('https://irakli-php-api-66869e659c11.herokuapp.com/deleteProduct.php', { itemIds: itemIdsToDelete })
-      .then(response => {
-        // Handle a successful deletion
-        console.log("Items deleted successfully.");
-        
-        // Remove the deleted items from the data state
-        setData(data.filter(item => !itemIdsToDelete.includes(item.id)));
+  const itemIdsToDelete = selectedItems.map(item => item.id);
 
-        // Clear the selected items
-        setSelectedItems([]);
-      })
-      .catch(error => {
-        console.error('Error deleting items:', error);
-      });
-
-    } else {
-      alert("no item is selected")
-      console.log("No items are selected for deletion.");
-    }
-  };
+  axios.post('https://irakli-php-api-66869e659c11.herokuapp.com/deleteProduct.php', { itemIds: itemIdsToDelete })
+    .then(response => {
+      console.log("Items deleted successfully.");
+      setData(data.filter(item => !itemIdsToDelete.includes(item.id)));
+      setSelectedItems([]);
+    })
+    .catch(error => {
+      console.error('Error deleting items:', error);
+    });
+};
   
 
 
@@ -68,10 +58,10 @@ function Home() {
             </div>
             <div className='header_buttons'>
                 <Link to="/add-product">
-                    <button id='buttonAdd' className='button'>ADD</button>
+                    <button id='buttonAdd' className='button'>Add</button>
                 </Link>
                 <Link>
-                  <button id='delete-product-btn' className='button' onClick={handleMassDelete} >MASS DELETE</button>
+                  <button id='delete-product-btn' className='button' onClick={handleMassDelete} >Mass Delete</button>
                 </Link>
             </div>
         </div>

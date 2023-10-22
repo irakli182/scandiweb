@@ -1,3 +1,8 @@
+
+## WEBSITE
+
+you can visit website here: https://scandiweb-lyart.vercel.app
+
 ## SCANDWIEB JUNIOR WEB DEVELOPER ASSIGNMENT 
 
 Hello, my name is Irakli, developer of this project.

@@ -13,7 +13,7 @@ export function DVDComponent() {
         <input
           className='input'
           type="number"
-          id='sizeMB'
+          id='size'
           value={size}
           onChange={(event) => setSize(event.target.value)}
         />

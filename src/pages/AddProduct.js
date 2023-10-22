@@ -17,7 +17,7 @@ function AddProduct() {
     const [selectedType, setSelectedType] = useState('DVD');
     
     const checkForm = () => {
-        if (selectedType === "DVD" && !document.getElementById("sizeMB").value) {
+        if (selectedType === "DVD" && !document.getElementById("size").value) {
             return false;
         }
         if (selectedType === "Furniture" && (!document.getElementById("height").value || !document.getElementById("width").value || !document.getElementById("length").value)) {
@@ -47,7 +47,7 @@ function AddProduct() {
         };
     
         if (selectedType === "DVD") {
-            data.sizeMB = document.getElementById("sizeMB").value;
+            data.size = document.getElementById("size").value;
         } else if (selectedType === "Furniture") {
             data.height = document.getElementById("height").value;
             data.width = document.getElementById("width").value;

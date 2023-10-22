@@ -68,10 +68,10 @@ function Home() {
             </div>
             <div className='header_buttons'>
                 <Link to="/add-product">
-                    <button id='buttonAdd' className='button'>Add</button>
+                    <button id='buttonAdd' className='button'>ADD</button>
                 </Link>
                 <Link>
-                  <button id='buttonDel' className='button' onClick={handleMassDelete} >Mass Delete</button>
+                  <button id='delete-product-btn' className='button' onClick={handleMassDelete} >MASS DELETE</button>
                 </Link>
             </div>
         </div>

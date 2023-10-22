@@ -6,7 +6,7 @@ I will go over the technologies I have used, and how I implemented them.
 
 ## Structure of the project
 
-In the assignment, we were told to build an app using php and mysql database, however I decided to use reactJS as my front-end tool. Because of this deicison my PHP files would not serve as a front-end, but rather would act as an API.
+For the assignment, the original requirement was to create an application using PHP and a MySQL database. However, I opted to utilize ReactJS for the front-end development. Consequently, my PHP files will no longer function as a front-end but instead will serve as an API to support the ReactJS application.
 
 ### Technologies
 
@@ -14,10 +14,11 @@ In the assignment, we were told to build an app using php and mysql database, ho
 2) I created my API using PHP and deployed it using [HEROKU](https://dashboard.heroku.com/apps).  
 3) I created mySQL databse using this website: https://www.freemysqlhosting.net
 
-Assignment mentioned 000webhost as a hosting service, but I decided to use HEROKU because 000webhost would not allow using PHP files as an API.
-Creating database using HEROKU was also possible, but I decided to use above refferenced website for that purpose, because it has phpMYAdmin avaliable. Heroku's mySQL database did not allow it and downloading third party apps for viewing databases was neccesary - just headache.
+The assignment initially suggested using 000webhost as the hosting service. However, I made the choice to utilize HEROKU instead, primarily because 000webhost didn't support the use of PHP files as APIs.
 
-I will add my PHP API files in a ```BACKEND``` directory.
+In terms of database creation, while HEROKU offered the option to create databases, I decided to use the mentioned website for this purpose due to its accessibility to phpMyAdmin. This feature made the database management more straightforward compared to HEROKU's MySQL database, which required third-party apps for database viewing, making the process more complex and potentially cumbersome.
+
+PHP API in a ```BACKEND``` directory.
 
 You can also access databsae using these credentials: 
 
@@ -33,4 +34,7 @@ Password: RA23f72DPL <br>
 ![image](https://github.com/irakli182/scandiweb/assets/112957853/602eb86f-ef87-4cf8-973d-f85ee1dc1b92)
 
 
+## CONTACT INFO
 
+iraklibusiness1@gmail.com
++995 555 411 337

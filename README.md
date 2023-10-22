@@ -1,23 +1,13 @@
 ## DATABASE
 
-mySQL database is hosted using ```https://www.freemysqlhosting.net```
 
-Link to pypMyAdmin: https://www.phpmyadmin.co/sql.php?server=1&db=sql11654711&table=products&pos=0
+PHP API is hosted on heroku along with mysql database
 
+HEROKU DATABASE
 
-BYET host:
+mysql://pagzvkjacwgbtvf8:bfvlqujm2cq4dr0f@nuepp3ddzwtnggom.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/hhhgnlz30ykkfm9z
 
-Control panel username:	b18_35271351
-Control panel password:	**********
-Control panel URL:	cpanel.byethost18.com
-
-MySQL username	b18_35271351
-MySQL password:	**********
-MySQL hostname:	sql306.byethost18.com
-
-FTP username:	b18_35271351
-FTP password:	**********
-FTP host name:	ftp.byethost18.com
-Your Website URL:	http://irakli.byethost18.com
-
-
+$servername = "nuepp3ddzwtnggom.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+$username = "pagzvkjacwgbtvf8";
+$password = "bfvlqujm2cq4dr0f";
+$dbname = "hhhgnlz30ykkfm9z";

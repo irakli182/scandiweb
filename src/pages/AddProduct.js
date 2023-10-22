@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { BookComponent, FurnitureComponent, DVDComponent } from '../components/Types';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import "../styles/AddProduct.css"
+import "../styles/AddProduct.css";
+
 
 
 function AddProduct() {
 
-    let navigate = useNavigate();
 
     const [sku, setSku] = useState('');
     const [name, setName] = useState('');
@@ -38,6 +38,7 @@ function AddProduct() {
             alert("Please fill in all fields");
             return;
         }
+        
     
         const data = {
             sku: skuValue,
@@ -55,28 +56,22 @@ function AddProduct() {
             data.weight = document.getElementById("weight").value;
         }
     
-        const url = 'https://scandiwebirakli2.000webhostapp.com/addProduct.php'; // Replace with your API endpoint
-        fetch(url, {
-          method: 'POST',
+        const url = 'https://irakli-php-api-66869e659c11.herokuapp.com/addProduct.php'; // Replace with your API endpoint
+
+        axios.post(url, data, {
           headers: {
             'Content-Type': 'application/json'
-          },
-          body: data // The JSON data you want to send
+          }
         })
           .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json(); // If you expect a JSON response from the server
-          })
-          .then(data => {
             // Handle the response from the server
-            console.log(data);
+            console.log(response.data);
           })
           .catch(error => {
             // Handle any errors
             console.error('Error:', error);
           });
+        
     
 
     };
@@ -91,11 +86,11 @@ function AddProduct() {
                     <p>Product Add</p>
                 </div>
                 <div className='header_buttons'>
-                    <Link>
-                    <button id='buttonAdd' className='button' onClick={checkInputs}>Save</button>
+                    <Link to="/">
+                        <button id='buttonAdd' className='button' onClick={checkInputs}>Save</button>
                     </Link>
                     <Link to="/">
-                    <button id='buttonDel' className='button'>Cancel</button>
+                        <button id='buttonDel' className='button'>Cancel</button>
                     </Link>
                 </div>
             </div>

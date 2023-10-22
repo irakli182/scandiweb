@@ -92,7 +92,7 @@ function Home() {
                             <p>{item.sku}</p>
                             <p>{item.name}</p>
                             <p>{item.price} $</p>
-                            {item.sizeMB !== null && <p>Size: {parseFloat(item.sizeMB)} MB</p>}
+                            {item.size !== null && <p>Size: {parseFloat(item.size)} MB</p>}
                             {item.height !== null && (
                                 <p>Dimentions: {parseFloat(item.height)}x{parseFloat(item.width)}x{parseFloat(item.length)} CM</p>
                             )}

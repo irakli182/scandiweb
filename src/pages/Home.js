@@ -84,7 +84,7 @@ const handleMassDelete = () => {
                             <p>{item.price} $</p>
                             {item.size !== null && <p>Size: {parseFloat(item.size)} MB</p>}
                             {item.height !== null && (
-                                <p>Dimentions: {parseFloat(item.height)}x{parseFloat(item.width)}x{parseFloat(item.length)} CM</p>
+                                <p>Dimensions: {parseFloat(item.height)}x{parseFloat(item.width)}x{parseFloat(item.length)} CM</p>
                             )}
                             {item.weight !== null && <p>Weight: {parseFloat(item.weight)} KG</p>}
                         </div>

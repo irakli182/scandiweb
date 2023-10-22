@@ -147,13 +147,8 @@ function AddProduct() {
                     </div>
                 </div>
 
-            </form>
-
-
-
-            <div id='productType'>
                 <label>Select Product Type:</label>
-                <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+                <select id='productType' value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="DVD">DVD</option>
                     <option value="Furniture">Furniture</option>
                     <option value="Book">Book</option>
@@ -164,9 +159,8 @@ function AddProduct() {
                     {selectedType === 'Furniture' && <FurnitureComponent />}
                     {selectedType === 'Book' && <BookComponent />}
                 </div>
-            </div>
-        
-            
+
+            </form>
         </div>
     );
 }

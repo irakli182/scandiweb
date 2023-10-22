@@ -38,16 +38,9 @@
     outline: none;
 }
 
-#productType {
-    margin-left: 50px;
-    font-size: 1.8rem;
-    border: 3px solid rgba(0, 0, 0, 0.308);
-    width: fit-content;
-    padding: 20px;
-}
 
 
-#productType select {
+#product_form select {
     margin-left: 50px;
     font-size: 1.5rem;
     height: fit-content;

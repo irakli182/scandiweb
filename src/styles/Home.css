@@ -40,6 +40,10 @@
   background-color: #E0234E;
 }
 
+#buttonDel {
+  background-color: #E0234E;
+}
+
 .product-grid {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping to the next row */

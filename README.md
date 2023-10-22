@@ -36,7 +36,8 @@ Password: RA23f72DPL <br>
 
 
 ## Test pass picture:
-![image](https://github.com/irakli182/scandiweb/assets/112957853/602eb86f-ef87-4cf8-973d-f85ee1dc1b92)
+![test](https://github.com/irakli182/scandiweb/assets/112957853/0a8686a9-7ad2-4c26-9cb8-254bf3f6b504)
+
 
 
 ## CONTACT INFO

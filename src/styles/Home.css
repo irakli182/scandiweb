@@ -17,7 +17,7 @@
 }
 
 .button {
-  width: 150px;
+  width: 160px;
   height: 60px;
   font-size: 1.5rem;
   border-style: hidden;
@@ -58,7 +58,7 @@
     align-items: center;
     min-width: 260px;
     width: fit-content;
-    height: 200px;
+    min-height: 220px;
     margin: 60px;
     text-align: center;
 }
@@ -90,3 +90,47 @@
   padding: 10px; 
 }
 
+@media screen and (max-width: 800px) {
+
+  .header {
+    flex-direction: column;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .header {
+    font-size: 2rem;
+  }
+
+  .button {
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+    border-style: hidden;
+    border-radius: 20px;
+    transition: 0.2s;
+  }
+
+  .product-card {
+    height: auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-height: 120px;
+    margin: 60px;
+    text-align: center; 
+}
+
+  .product-card p {
+    font-size: 1rem;
+  }
+
+}

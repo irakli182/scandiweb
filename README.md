@@ -17,24 +17,15 @@ For the assignment, the original requirement was to create an application using 
 
 1) I created my frontend using reactJS and deployed it on vercel.
 2) I created my API using PHP and deployed it using [HEROKU](https://dashboard.heroku.com/apps).  
-3) I created mySQL databse using this website: https://www.freemysqlhosting.net
+3) I created mySQL and hosted mySQL datase using [JawsDB](https://elements.heroku.com/addons/jawsdb).
 
 The assignment initially suggested using 000webhost as the hosting service. However, I made the choice to utilize HEROKU instead, primarily because 000webhost didn't support the use of PHP files as APIs.
 
-In terms of database creation, while HEROKU offered the option to create databases, I decided to use the mentioned website for this purpose due to its accessibility to phpMyAdmin. This feature made the database management more straightforward compared to HEROKU's MySQL database, which required third-party apps for database viewing, making the process more complex and potentially cumbersome.
+I've established a separate repository to store my PHP API files, and I've deployed these files using Heroku. For your convenience, I've included the PHP API files in this repository, making them accessible for inspection and review. You can find the PHP API files within the ```BACKEND``` directory.
 
-PHP API in a ```BACKEND``` directory.
+When it came to setting up my database, I opted for Heroku, which I had already chosen as my API hosting platform. In this context, I made the logical decision to go with JawsDB MySQL, a free MySQL database hosting service provided by Heroku.
 
-You can also access databsae using these credentials: 
-
-phpMyAdmin: https://www.phpmyadmin.co
-
-Server: sql11.freemysqlhosting.net <br>
-Name: sql11654711 <br>
-Username: sql11654711 <br>
-Password: RA23f72DPL <br>
-
-
+If you have an interest in accessing the database, please feel free to get in touch with me, and I'll be happy to provide you with the necessary credentials.
 ## Test pass picture:
 ![test](https://github.com/irakli182/scandiweb/assets/112957853/0a8686a9-7ad2-4c26-9cb8-254bf3f6b504)
 

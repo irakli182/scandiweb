@@ -9,7 +9,7 @@ function Home() {
   const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
-    axios.get('https://irakli-php-api-66869e659c11.herokuapp.com/getProduct.php')
+    axios.get('https://php-api-production-e145.up.railway.app/getProduct.php')
       .then((response) => {
         setData(response.data);
       })
@@ -36,7 +36,7 @@ const handleMassDelete = () => {
 
   const itemIdsToDelete = selectedItems.map(item => item.id);
 
-  axios.post('https://irakli-php-api-66869e659c11.herokuapp.com/deleteProduct.php', { itemIds: itemIdsToDelete })
+  axios.post('https://php-api-production-e145.up.railway.app/deleteProduct.php', { itemIds: itemIdsToDelete })
     .then(response => {
       console.log("Items deleted successfully.");
       setData(data.filter(item => !itemIdsToDelete.includes(item.id)));

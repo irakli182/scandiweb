@@ -51,10 +51,10 @@ const handleMassDelete = () => {
 
   return (
     <div className="wrapper">
-
         <div className='header'>
             <div className='header_text'>
                 <p>Product List</p>
+                <p className='warning'>Website might be a bit slow because of free API and DB services. Thanks for your patience :)</p>
             </div>
             <div className='header_buttons'>
                 <Link to="/add-product">

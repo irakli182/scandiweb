@@ -58,7 +58,7 @@ function AddProduct() {
         }
     
 
-        axios.post('https://irakli-php-api-66869e659c11.herokuapp.com/addProduct.php', data, {
+        axios.post('https://php-api-production-e145.up.railway.app/addProduct.php', data, {
           headers: {
             'Content-Type': 'application/json'
           }

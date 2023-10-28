@@ -18,9 +18,9 @@ For the assignment, the original requirement was to create an application using 
 1) I created my frontend using reactJS and deployed it on vercel.
 2) I created my API using PHP and deployed it using [HEROKU](https://dashboard.heroku.com/apps).
 > UPDATE!!! I had to migrate my API from heroku to [RAILWAY](https://railway.app). I had to make this change, beacause heroku free trial expired, and I decided to use RAILWAY as an alternative. This makes website a bit slower - that's the price to pay I guess :)
-3) I created mySQL and hosted mySQL datase using [JawsDB](https://elements.heroku.com/addons/jawsdb).
+3) I created and hosted mySQL datase using [JawsDB](https://elements.heroku.com/addons/jawsdb).
 
-The assignment initially suggested using 000webhost as the hosting service. However, I made the choice to utilize HEROKU instead, primarily because 000webhost didn't support the use of PHP files as APIs.
+The assignment initially suggested using 000webhost as the hosting service. However, I made the choice to utilize HEROKU and RAILS instead, primarily because 000webhost didn't support the use of PHP files as APIs.
 
 I've established a separate repository to store my PHP API files, and I've deployed these files using Heroku. For your convenience, I've included the PHP API files in this repository, making them accessible for inspection and review. You can find the PHP API files within the ```BACKEND``` directory.
 
